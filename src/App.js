@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import './App.css';
 import NavBar from './components/navbar/navbar';
-//import Card from './components/Card/Card';
 import DashBoard from './components/dashboard-view/dashBoard';
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllData } from './action/data-action';
@@ -12,7 +11,7 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchAllData());
   }, [dispatch])
-  
+
   return allTickets ? (
     <div style={{ paddingTop: "15px" }} >
       <NavBar />
@@ -22,3 +21,4 @@ const App = () => {
   ) : <Loading />
 }
 export default App
+

@@ -1,5 +1,4 @@
 import axios from "axios";
-import Card from "../components/card/card";
 const data_req = "DATA_REQUEST";
 const data_success = "DATA_SUCCESS";
 const data_failure = "DATA_FAILURE";

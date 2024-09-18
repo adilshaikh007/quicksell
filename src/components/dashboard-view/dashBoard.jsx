@@ -1,16 +1,17 @@
 
 import { React } from "react";
 import { useSelector } from "react-redux";
-import { AiOutlinePlus } from "react-icons/ai";
-import { FaRegCircle } from "react-icons/fa6";
-import { MdCancel } from "react-icons/md";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { BiAdjust, BiLoader } from "react-icons/bi";
 import { DiCodeigniter } from "react-icons/di";
+import { ReactComponent as BacklogIcon } from '../../assets/icons_FEtask/Backlog.svg';
+import { ReactComponent as ToDoIcon } from '../../assets/icons_FEtask/To-do.svg';
+import { ReactComponent as InProgressIcon } from '../../assets/icons_FEtask/in-progress.svg';
+import { ReactComponent as DoneIcon } from '../../assets/icons_FEtask/Done.svg';
+import { ReactComponent as AddIcon } from '../../assets/icons_FEtask/add.svg';
+import { ReactComponent as CancelledIcon } from '../../assets/icons_FEtask/Cancelled.svg';
 import {
   BsCheckCircleFill,
   BsFillExclamationSquareFill,
-  BsFillCheckCircleFill,
 } from "react-icons/bs";
 import "./dashboard.css";
 import Card from "../card/card";
@@ -59,18 +60,16 @@ const DashBoard = () => {
                         fontWeight: 200,
                       }}
                     >
-                      {element[index].title === "Backlog" ? (
-                        <BiLoader style={{ fontSize: "13px" }} /> 
-                       
+                     
+                       {element[index].title === "Backlog" ? (
+                        <BacklogIcon style={{ width: "13px", height: "13px" }} />
                       )
                         : element[index].title === "Todo" ? (
-                          <FaRegCircle
-                            style={{ fontSize: "13px", color: "#ddeded" }}
-                          />
+                          
+                          <ToDoIcon style={{ width: "13px", height: "13px" }} />
                         ) : element[index].title === "In progress" ? (
-                          <BiAdjust
-                            style={{ fontSize: "13px", color: "#f2d750" }}
-                          />
+                          
+                          <InProgressIcon style={{ width: "13px", height: "13px" }} />
                         ) : element[index].title === "Done" ? (
                           <BsCheckCircleFill />
                         ) : (
@@ -131,7 +130,7 @@ const DashBoard = () => {
                   <span>{element[index]?.title} <span style={{ color: "#8F9997" }}>{element[index].value?.length}</span></span>
                 </div>
                 <div className="rightView">
-                  <AiOutlinePlus />{" "}
+                  <AddIcon />{" "}
                   <span style={{ letterSpacing: "2px" }}>...</span>
                 </div>
               </div>
@@ -164,12 +163,13 @@ const DashBoard = () => {
                     fontWeight: 200,
                   }}
                 >
-                  <BsFillCheckCircleFill style={{ color: "blue" }} />
+                   <DoneIcon style={{ color: "blue", width: "13px", height: "13px" }} />
+               
                 </div>{" "}
                 <span style={{ fontSize: "13px", fontWeight: "lighter" }}>Done</span> <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
               </div>
               <div className="rightView">
-                <AiOutlinePlus />{" "}
+                <AddIcon />{" "}
                 <span style={{ letterSpacing: "2px" }}>...</span>
               </div>
             </div>
@@ -184,12 +184,12 @@ const DashBoard = () => {
                     fontWeight: 200,
                   }}
                 >
-                  <MdCancel style={{ color: "grey" }} />
+                  <CancelledIcon style={{ color: "blue", width: "13px", height: "13px" }} />
                 </div>{" "}
                 <span style={{ fontSize: "13px", fontWeight: "lighter" }}>Canceled</span> <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
               </div>
               <div className="rightView">
-                <AiOutlinePlus />{" "}
+                <AddIcon />{" "}
                 <span style={{ letterSpacing: "2px" }}>...</span>
               </div>
             </div>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { TiThList } from "react-icons/ti";
 import "./navbar.css";
 import { useSelector, useDispatch } from "react-redux";
 import { selectData } from "../../action/data-action";
+import { ReactComponent as DisplayIcon } from '../../assets/icons_FEtask/Display.svg';
 localStorage.setItem("group", "status");
 localStorage.setItem("order", "priority");
 const getOrder = () => {
@@ -60,7 +60,7 @@ const NavBar = () => {
           onClick={() => setDisplayOnClick(!displayOnClick)}
         >
           {" "}
-          <TiThList /> Display
+          <DisplayIcon /> Display
         </button>
         {displayOnClick && (
           <>
