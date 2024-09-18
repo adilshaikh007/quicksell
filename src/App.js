@@ -12,6 +12,7 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchAllData());
   }, [dispatch])
+  
   return allTickets ? (
     <div style={{ paddingTop: "15px" }} >
       <NavBar />
